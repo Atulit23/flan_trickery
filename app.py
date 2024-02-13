@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
 from bs4 import BeautifulSoup
 import requests
+from flask_cors import CORS
 
 unified_url = "https://review-and-ads.vercel.app/text-interference"
 app = Flask(__name__)
+CORS(app)  
 
 @app.route('/review-terms-of-cancellation', methods=['GET'])
 def termsOfCancellation():
@@ -95,7 +97,7 @@ def howToCancel():
         else:
             new_text = ' '.join(all_text[indices[0] - 120: indices[0] + 150])
 
-        new_text = new_text + '. Do they tell you how to cancel ? Answer in yes or no.'
+        new_text = new_text + '. Do they tell you how to cancel the subscription? Answer in yes or no.'
         print(new_text)
         
         data = {'text': new_text}
