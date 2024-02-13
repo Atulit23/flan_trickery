@@ -4,3 +4,4 @@ gunicorn
 requests
 uvicorn
 flask-cors
+gradio_client
