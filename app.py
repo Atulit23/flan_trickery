@@ -32,11 +32,12 @@ def termsOfCancellation():
             return jsonify({'response': 'No occurrences of "cancellation" found in the text.'})
 
         if len(indices) > 1:
-            if (indices[-1] - indices[0] > 300):
-                if (indices[-1] - indices[-2] > 300):
-                    new_text = ' '.join(all_text[indices[-1] - 120: indices[-1] + 120])
-                else:
-                    new_text = ' '.join(all_text[indices[-2] - 60: indices[-1] + 120])
+            if (indices[-1] - indices[0] > 600):
+                new_text = ' '.join(all_text[indices[0] + 100: indices[-1] + 100])
+                # if (indices[-1] - indices[-2] > 600):
+                #     new_text = ' '.join(all_text[indices[-1] - 120: indices[-1] + 120])
+                # else:
+                #     new_text = ' '.join(all_text[indices[-2] - 60: indices[-1] + 120])
             else:
                 new_text = ' '.join(all_text[indices[0]: indices[-1]])
         else:
@@ -84,14 +85,15 @@ def howToCancel():
                 indices.append(i)
 
         if not indices:
-            return jsonify({'message': 'No occurrences of "cancellation" found in the text.'})
-
+            return jsonify({'response': 'No occurrences of "cancellation" found in the text.'})
+        print(indices)
         if len(indices) > 1:
-            if (indices[-1] - indices[0] > 300):
-                if (indices[-1] - indices[-2] > 300):
-                    new_text = ' '.join(all_text[indices[-1] - 120: indices[-1] + 120])
-                else:
-                    new_text = ' '.join(all_text[indices[-2] - 60: indices[-1] + 120])
+            if (indices[-1] - indices[0] > 600):
+                new_text = ' '.join(all_text[indices[0] + 100: indices[-1] + 100])
+                # if (indices[-1] - indices[-2] > 600):
+                #     new_text = ' '.join(all_text[indices[-1] - 120: indices[-1] + 120])
+                # else:
+                #     new_text = ' '.join(all_text[indices[-2] - 60: indices[-1] + 120])
             else:
                 new_text = ' '.join(all_text[indices[0]: indices[-1]])
         else:
