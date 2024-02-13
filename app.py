@@ -29,7 +29,7 @@ def termsOfCancellation():
                 indices.append(i)
 
         if not indices:
-            return jsonify({'message': 'No occurrences of "cancellation" found in the text.'})
+            return jsonify({'response': 'No occurrences of "cancellation" found in the text.'})
 
         if len(indices) > 1:
             if (indices[-1] - indices[0] > 300):
