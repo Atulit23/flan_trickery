@@ -57,13 +57,14 @@ def termsOfCancellation():
 				api_name="/predict"
             )
             print(result)
+            print(type(result))
             # response = requests.post(unified_url, json=data)
             # response.raise_for_status()
             # print(response.text)
             if(result.find("no") != -1):
-                return jsonify({"response": "They don't explain you how to cancel your subscription!"})
+                return jsonify({"response": "The terms of cancellation are not clear."})
             else:
-                return jsonify({"response": "They explain you how to cancel your subscription!"})
+                return jsonify({"response": "The terms of cancellation are clear."})
         except Exception as e:
             print(f"Error occurred: {str(e)}")
             return jsonify({"response": f"Error occurred: {str(e)}"})
