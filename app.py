@@ -34,8 +34,8 @@ def termsOfCancellation():
             return jsonify({'response': 'No occurrences of "cancellation" found in the text.'})
 
         if len(indices) > 1:
-            if (indices[-1] - indices[0] > 600):
-                new_text = ' '.join(all_text[indices[0] + 200: indices[-1] + 100])
+            if (indices[-1] - indices[0] > 500):
+                new_text = ' '.join(all_text[indices[0] + 180: indices[-1] + 60])
                 # if (indices[-1] - indices[-2] > 600):
                 #     new_text = ' '.join(all_text[indices[-1] - 120: indices[-1] + 120])
                 # else:
