@@ -54,8 +54,11 @@ def termsOfCancellation():
             print("I ave enetered")
             new_text = ' '.join(new_text.split(" ")[280:len(new_text.split(" "))])
 
-        elif(len(new_text.split(" ")) > 800):
+        elif(len(new_text.split(" ")) > 800 and len(new_text.split(" ")) < 900):
             new_text = ' '.join(new_text.split(" ")[380:len(new_text.split(" "))])
+
+        elif(len(new_text.split(" ")) > 900):
+            new_text = ' '.join(new_text.split(" ")[480:len(new_text.split(" "))])
 
         new_text = new_text + '. Are the terms of cancellation clear ? Answer in yes or no.'
 
@@ -126,10 +129,15 @@ def howToCancel():
         
         if(len(new_text.split(" ")) > 500 and len(new_text.split(" ")) < 700):
             new_text = ' '.join(new_text.split(" ")[150:len(new_text.split(" "))])
+            
         elif(len(new_text.split(" ")) > 700 and len(new_text.split(" ")) < 800):
             new_text = ' '.join(new_text.split(" ")[280:len(new_text.split(" "))])
-        elif(len(new_text.split(" ")) > 800):
+
+        elif(len(new_text.split(" ")) > 800 and len(new_text.split(" ")) < 900):
             new_text = ' '.join(new_text.split(" ")[380:len(new_text.split(" "))])
+
+        elif(len(new_text.split(" ")) > 900):
+            new_text = ' '.join(new_text.split(" ")[480:len(new_text.split(" "))])
 
         new_text = new_text + '. Do they tell you how to cancel the subscription? Answer in yes or no.'
         
