@@ -48,11 +48,11 @@ def termsOfCancellation():
         print(len(new_text.split(" ")))
         
         if(len(new_text.split(" ")) > 500 and len(new_text.split(" ")) < 700):
-            new_text = ' '.join(new_text.split(" ")[150:len(new_text.split(" "))])
+            new_text = ' '.join(new_text.split(" ")[200:len(new_text.split(" "))])
 
         elif(len(new_text.split(" ")) > 700 and len(new_text.split(" ")) < 800):
             print("I ave enetered")
-            new_text = ' '.join(new_text.split(" ")[300:len(new_text.split(" "))])
+            new_text = ' '.join(new_text.split(" ")[320:len(new_text.split(" "))])
 
         elif(len(new_text.split(" ")) > 800 and len(new_text.split(" ")) < 900):
             new_text = ' '.join(new_text.split(" ")[420:len(new_text.split(" "))])
@@ -128,10 +128,10 @@ def howToCancel():
         print(len(new_text.split(" ")))
         
         if(len(new_text.split(" ")) > 500 and len(new_text.split(" ")) < 700):
-            new_text = ' '.join(new_text.split(" ")[150:len(new_text.split(" "))])
+            new_text = ' '.join(new_text.split(" ")[200:len(new_text.split(" "))])
 
         elif(len(new_text.split(" ")) > 700 and len(new_text.split(" ")) < 800):
-            new_text = ' '.join(new_text.split(" ")[280:len(new_text.split(" "))])
+            new_text = ' '.join(new_text.split(" ")[320:len(new_text.split(" "))])
 
         elif(len(new_text.split(" ")) > 800 and len(new_text.split(" ")) < 900):
             new_text = ' '.join(new_text.split(" ")[420:len(new_text.split(" "))])
