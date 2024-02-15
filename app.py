@@ -35,7 +35,7 @@ def termsOfCancellation():
 
         if len(indices) > 1:
             if (indices[-1] - indices[0] > 500):
-                new_text = ' '.join(all_text[indices[0] + 180: indices[-1] + 60])
+                new_text = ' '.join(all_text[indices[0] + 220: indices[-1] + 60])
                 # if (indices[-1] - indices[-2] > 600):
                 #     new_text = ' '.join(all_text[indices[-1] - 120: indices[-1] + 120])
                 # else:
@@ -45,9 +45,23 @@ def termsOfCancellation():
         else:
             new_text = ' '.join(all_text[indices[0] - 120: indices[0] + 150])
 
+        print(len(new_text.split(" ")))
+        
+        if(len(new_text.split(" ")) > 500 and len(new_text.split(" ")) < 700):
+            new_text = ' '.join(new_text.split(" ")[150:len(new_text.split(" "))])
+
+        elif(len(new_text.split(" ")) > 700 and len(new_text.split(" ")) < 800):
+            print("I ave enetered")
+            new_text = ' '.join(new_text.split(" ")[280:len(new_text.split(" "))])
+
+        elif(len(new_text.split(" ")) > 800):
+            new_text = ' '.join(new_text.split(" ")[380:len(new_text.split(" "))])
+
         new_text = new_text + '. Are the terms of cancellation clear ? Answer in yes or no.'
 
-        print(new_text)
+        print(len(new_text.split(" ")))
+
+        # print(new_text)
 
         data = {'text': new_text}
 
@@ -108,10 +122,22 @@ def howToCancel():
         else:
             new_text = ' '.join(all_text[indices[0] - 120: indices[0] + 150])
 
+        print(len(new_text.split(" ")))
+        
+        if(len(new_text.split(" ")) > 500 and len(new_text.split(" ")) < 700):
+            new_text = ' '.join(new_text.split(" ")[150:len(new_text.split(" "))])
+        elif(len(new_text.split(" ")) > 700 and len(new_text.split(" ")) < 800):
+            new_text = ' '.join(new_text.split(" ")[280:len(new_text.split(" "))])
+        elif(len(new_text.split(" ")) > 800):
+            new_text = ' '.join(new_text.split(" ")[380:len(new_text.split(" "))])
+
         new_text = new_text + '. Do they tell you how to cancel the subscription? Answer in yes or no.'
-        # print(new_text)
+        
+        print(len(new_text.split(" ")))
 
         data = {'text': new_text}
+
+        # print(new_text)
 
         try:
             result = client.predict(
